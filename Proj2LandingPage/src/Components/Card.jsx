@@ -3,8 +3,8 @@ import Single from '../assets/single.png'
 
 const Card = (props) => {
   return (
-    <div className='h-[90vh]'>
-      <div className='bg-slate-100 shadow-xl mx-10 my-10 py-10 rounded-lg flex flex-col items-center hover:scale-105 hover:bg-slate-300'>
+    <div className=''>
+      <div className='bg-slate-100 shadow-xl mx-10 my-10 py-10 rounded-lg flex flex-col items-center hover:scale-105 hover:bg-slate-200'>
         <img src={Single} className='w-[80px]'alt="" />
         <p className='font-bold text-1.5xl py-3'>{props.pkg}</p>
         <p className='font-bold text-2xl pb-3 '>${props.price}</p>
