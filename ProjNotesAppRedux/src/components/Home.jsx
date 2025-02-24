@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router';
-
+import { updateToPastes,addToPastes } from '../redux/pasteSlice';
 const Home = () => {
     const [title,setTitle]=useState('');
     const [value,setValue]=useState('')
@@ -13,8 +13,8 @@ const Home = () => {
             title:title,
             value:value,
             _id:pasteId ||
-            Date.now.toString(36),
-            createdAt: new Date.toISOSstring
+            Date.now().toString(36),
+            createdAt: new Date().toISOSstring(s)
         }
 if(pasteId)
 {
@@ -40,12 +40,13 @@ setParams({})
             value={title}
             onChange={(e) => setTitle(e.target.value)}
         />
-        <button className="bg-orange-400 px-4 py-2 border rounded-lg text-lg text-white font-medium">
+        <button className="bg-orange-400 px-4 py-2 border rounded-lg text-lg text-white font-medium"
+        onClick={createPaste}
+        >
             {pasteId ? "Update Paste" : "Create Paste"}
         </button>
     </div>
 
-    {/* Textarea Section */}
     <div className="flex justify-center mt-8">
         <textarea
             className="p-2 border-2 rounded-lg border-gray-500 text-lg font-medium w-full max-w-lg placeholder:text-black"
