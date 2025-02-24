@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateToPastes, removeFromPastes, resetAllPastes } from "../redux/pasteSlice";
 import toast from "react-hot-toast";
+import { FiCopy } from "react-icons/fi";
+import { MdDelete } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
+import { CiShare1 } from "react-icons/ci";
+
 
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
@@ -130,25 +135,26 @@ const handleResetAll = () => {
                     className="bg-blue-500 px-3 border rounded-md font-semibold text-white py-2"
                     onClick={() => startEditing(paste)}
                   >
-                    Edit
+                    <CiEdit />
+
                   </button>
                   <button
                     className="bg-red-500 px-3 border rounded-md font-semibold text-white py-2"
                     onClick={() => handleDelete(paste._id)}
                   >
-                    Delete
+                    <MdDelete />
                   </button>
                   <button
                     className="bg-purple-500 px-3 border rounded-md font-semibold text-white py-2"
                     onClick={() => handleCopy(paste.value)}
                   >
-                    Copy
+                     <FiCopy /> 
                   </button>
                   <button
                     className="bg-teal-500 px-3 border rounded-md font-semibold text-white py-2"
                     onClick={() => handleShare(paste)}
                   >
-                    Share
+                    <CiShare1 />
                   </button>
                 </>
               )}
@@ -161,7 +167,7 @@ const handleResetAll = () => {
     className="bg-red-500 px-3 border rounded-md font-semibold text-white py-2 mt-3"
     onClick={handleResetAll}
   >
-    Reset All
+    Reset All 
   </button>
 )}
     </div>
