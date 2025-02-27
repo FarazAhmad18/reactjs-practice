@@ -8,9 +8,9 @@ const Navbar = () => {
   const {openSignIn}=useClerk()
   const {user} =useUser()
   return (
-    <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-36 border-b border-gray-500 py-4
-    ${isCourseListPage? 'bg:white':'bg-cyan-100/70'}`}>
-      <img src={assets.logo} alt="logo" className='w-28 lg:w-32 cursor-pointer' />
+    <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-36 py-4
+    ${isCourseListPage? 'bg:white':'bg-red-200'}`}>
+     <span className='font-bold text-lg sm:font-extrabold sm:text-2xl'>Studify.</span>
      {/* for desktop view */}
       <div className='hidden md:flex items-center gap-5 text-gray-500'>
         <div className='flex items-center gap-5'>
@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link to='/my-enrollments'>My Enrollments</Link>
           </>}
           {user? <UserButton/>:
-          <button className='bg-blue-600 px-2 py-1.5 text-white border-none rounded-md'
+          <button className='bg-red-500 px-2 py-1.5 text-white border-none rounded-md hover:bg-red-600'
           onClick={()=>openSignIn()}>Create Account</button>}
           
         </div>
@@ -37,7 +37,7 @@ const Navbar = () => {
           </>}
           </div>
           {
-            user? <UserButton/>:<button ><img src={assets.user_icon} alt="" /></button>
+            user? <UserButton/>:<button onClick={()=>openSignIn()} ><img src={assets.user_icon} alt="" /></button>
           }
           
         
