@@ -26,7 +26,6 @@ const CourseCard = ({ course }) => {
           <p>(22 Reviews)</p>
         </div>
 
-        {/* Course Price */}
         <p className="text-red-500 font-bold mt-2">
           {currency} {course.coursePrice.toFixed(2)}
         </p>
