@@ -26,8 +26,10 @@
 //     </div>
 //   )
 // }
-
+// import React, { useState } from "react";
+// import { quizDataArray } from "./quizData";
 // export default Quiz
+
 
 import React, { useState } from "react";
 import { quizDataArray } from "./quizData";
